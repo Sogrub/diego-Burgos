@@ -1,5 +1,5 @@
 <section class="main">
-  <div class="banner-all"></div>
+  <!-- <div class="banner-all"></div> -->
   <div class="banner">
     <div class="info-name">
       <div #name class="name">
@@ -11,7 +11,13 @@
       </div>
     </div>
     <div class="photo">
-      <img src="../../../assets/images/coffe.png" width="100%" alt="">
+      <div class="container">
+        <div class="cube" [style.transform]="rotationStyle">
+          <div *ngFor="let face of cubeFaces" class="face">
+            <div *ngFor="let character of face" class="character">{{ character }}</div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>

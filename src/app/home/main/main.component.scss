@@ -8,24 +8,29 @@
   height: 100vh;
   z-index: 1;
 
-  .banner-all {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: fixed no-repeat url('https://cdn.leonardo.ai/users/de0855fa-76c0-4292-aca3-8f21c4c9be61/generations/f4cb83fe-ebde-4d80-9f41-166275e397f8/Vintage_Style_Photography_asia_red_mountains_boat_snow_stars_m_1.jpg');
-    background-size: cover;
-  }
+  // .banner-all {
+  //   position: fixed;
+  //   top: 0;
+  //   left: 0;
+  //   width: 100%;
+  //   height: 100%;
+  //   background: fixed no-repeat url('https://cdn.leonardo.ai/users/de0855fa-76c0-4292-aca3-8f21c4c9be61/generations/f4cb83fe-ebde-4d80-9f41-166275e397f8/Vintage_Style_Photography_asia_red_mountains_boat_snow_stars_m_1.jpg');
+  //   background-size: cover;
+  // }
 
   .banner {
     position: relative;
     display: flex;
     width: 100%;
     height: 100%;
+    background: fixed no-repeat
+      // url("https://images.alphacoders.com/115/1156517.jpg");
+      url("https://c.wallhere.com/photos/42/c7/landscape_castle_Hogwarts_night_lights_trees_dark_magic-104520.jpg!d");
+      // url("https://thumbs.dreamstime.com/b/castillo-paisaje-de-la-noche-62662371.jpg");
 
+    background-size: cover;
 
-    @media (max-width:768px) {
+    @media (max-width: 768px) {
       flex-direction: column;
       align-items: center;
     }
@@ -35,12 +40,15 @@
       width: 50%;
       height: 100%;
 
-      @media (max-width:768px) {
+      @media (max-width: 768px) {
         width: 100% !important;
       }
 
       .name {
         position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -48,6 +56,7 @@
         span {
           position: relative;
           display: flex;
+          justify-content: center;
           font-size: 6rem;
           overflow: hidden;
           letter-spacing: 1rem;
@@ -59,6 +68,7 @@
             transform: translateY(-1000px);
             transition: 1s;
             text-shadow: 2px 2px 2px #000;
+            text-align: center;
           }
 
           .letter-sm {
@@ -111,13 +121,50 @@
       width: 50%;
       height: 100%;
 
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+
+        .cube {
+          width: 300px;
+          height: 300px;
+          position: relative;
+          transform-style: preserve-3d;
+          transition: transform 0.5s;
+
+
+          .face {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            display: flex;
+            flex-wrap: wrap;
+            text-shadow: 2px 2px 2px #000;
+            overflow: hidden;
+
+            .character {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-size: 14px;
+              font-weight: bold;
+              color: #2a623d;
+            }
+          }
+        }
+      }
+
       @media (max-width: 768px) {
+        display: none !important;
         position: absolute;
         width: 100%;
       }
 
       img {
         position: absolute;
+        top: 0;
         bottom: 0;
         opacity: 0.6;
       }
@@ -128,4 +175,23 @@
 .in {
   opacity: 1 !important;
   transform: translateY(0) !important;
+}
+
+.face:nth-child(1) {
+  transform: translateZ(100px);
+}
+.face:nth-child(2) {
+  transform: rotateY(90deg) translateZ(100px);
+}
+.face:nth-child(3) {
+  transform: rotateY(180deg) translateZ(100px);
+}
+.face:nth-child(4) {
+  transform: rotateY(-90deg) translateZ(100px);
+}
+.face:nth-child(5) {
+  transform: rotateX(90deg) translateZ(100px);
+}
+.face:nth-child(6) {
+  transform: rotateX(-90deg) translateZ(100px);
 }

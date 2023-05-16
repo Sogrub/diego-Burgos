@@ -14,9 +14,14 @@ export class MainComponent implements AfterViewInit {
 
   first: string[] = ['D', 'I', 'E', 'G', 'O'];
   last: string[] = ['B', 'U', 'R', 'G', 'O', 'S'];
+  cubeFaces: string[] = [];
+  rotationAngle = 0;
+  rotationStyle: any;
 
   ngAfterViewInit(): void {
     this.animationDelay();
+    this.generateCubeFaces();
+    this.startRotation();
   }
 
   animationDelay() {
@@ -45,5 +50,24 @@ export class MainComponent implements AfterViewInit {
       rol[0].classList.add('in');
       this.contact.nativeElement.classList.add('in');
     }, 3400);
+  }
+
+  generateCubeFaces() {
+    const characters = '!"#$%&/()==?¡¨[]*;:_°><ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    for (let i = 0; i < 6; i++) {
+      const face: any = [];
+      for (let j = 0; j < 600; j++) {
+        let randomChar = characters.charAt(Math.floor(Math.random() * characters.length));
+        face.push(randomChar);
+      }
+      this.cubeFaces.push(face);
+    }
+  }
+
+  startRotation() {
+    setInterval(() => {
+      this.rotationAngle += 1;
+      this.rotationStyle = `rotateX(${this.rotationAngle}deg) rotateY(${this.rotationAngle}deg)`;
+    }, 50);
   }
 }
