@@ -8,11 +8,22 @@
   height: 100vh;
   z-index: 1;
 
+  .banner-all {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: fixed no-repeat url('https://cdn.leonardo.ai/users/de0855fa-76c0-4292-aca3-8f21c4c9be61/generations/f4cb83fe-ebde-4d80-9f41-166275e397f8/Vintage_Style_Photography_asia_red_mountains_boat_snow_stars_m_1.jpg');
+    background-size: cover;
+  }
+
   .banner {
     position: relative;
     display: flex;
     width: 100%;
     height: 100%;
+
 
     @media (max-width:768px) {
       flex-direction: column;
@@ -47,6 +58,7 @@
             color: #2a623d;
             transform: translateY(-1000px);
             transition: 1s;
+            text-shadow: 2px 2px 2px #000;
           }
 
           .letter-sm {
@@ -107,7 +119,7 @@
       img {
         position: absolute;
         bottom: 0;
-        opacity: 0.3;
+        opacity: 0.6;
       }
     }
   }
