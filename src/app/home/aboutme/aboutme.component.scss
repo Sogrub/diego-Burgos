@@ -1,0 +1,89 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 80vh;
+  z-index: 1;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 0 15rem;
+
+    .header-content {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 20%;
+
+      h1, h2 {
+        position: absolute;
+        color: #fff;
+        font-family: "hpotter", sans-serif;
+        user-select: none;
+      }
+
+      h1 {
+        top: 1px;
+        color: #ddd;
+        font-size: 5rem;
+        opacity: 0.2;
+        z-index: 0;
+      }
+
+      h2 {
+        font-size: 3rem;
+        z-index: 1;
+      }
+    }
+
+    .body-content {
+      display: flex;
+      width: 100%;
+      height: 80%;
+
+      .info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 50%;
+        height: 100%;
+
+        p {
+          text-align: center;
+          font-family: cursive, sans-serif;
+          color: #bbb;
+        }
+
+        .info-detail {
+          display: flex;
+          align-items: center;
+          margin: 0.5rem 1rem;
+
+          span {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 3rem;
+            height: 3rem;
+            margin: 0 1rem;
+            border-radius: 50%;
+            background: #2a623d;
+          }
+        }
+      }
+
+      .world-container {
+        position: relative;
+        display: flex;
+        width: 50%;
+        height: 100%;
+      }
+    }
+  }
+
+
+}

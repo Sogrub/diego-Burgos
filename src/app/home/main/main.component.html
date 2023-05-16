@@ -1,0 +1,16 @@
+<section class="main">
+  <div class="banner">
+    <div class="info-name">
+      <div #name class="name">
+        <span #grettings><p class="letter letter-sm">Hola, Soy</p></span>
+        <span #firstName><p class="letter" *ngFor="let letter of first">{{letter}}</p></span>
+        <span #lastName><p class="letter" *ngFor="let letter of last">{{letter}}</p></span>
+        <span #profile><p class="letter letter-sm">Full Stack Developer</p></span>
+        <button #contact class="button">Contactame <span class="content"></span></button>
+      </div>
+    </div>
+    <div class="photo">
+      <img src="../../../assets/images/mi-foto.png" width="100%" alt="">
+    </div>
+  </div>
+</section>
